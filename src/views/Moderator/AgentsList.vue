@@ -54,17 +54,17 @@ export default {
           dataIndex: 'name',
           width: '30%'
         },
-        {
-          title: 'Username',
-          dataIndex: 'username'
-        },
+        // {
+        //   title: 'Username',
+        //   dataIndex: 'username'
+        // },
         {
           title: 'Email Address',
           dataIndex: 'email'
         },
         {
           title: 'Delete',
-          width: '10%',
+          width: '30%',
           dataIndex: 'actions',
           scopedSlots: { customRender: 'delete' }
         }
@@ -86,29 +86,20 @@ export default {
       let newAgent = {
         key: this.key,
         name: '',
-        username: '',
+       // username: '',
         email: ''
       }
-      //  newAgent.name = payload.agentName
-      // newAgent.username = payload.agentUsername
-      // newAgent.email = payload.agentEmail
+    
       newAgent.name = payload.name
-      newAgent.username = payload.username
+     // newAgent.username = payload.username
       newAgent.email = payload.email
       this.dataSource.push(newAgent)
       this.key++
-      //  AddAgent({
-      //   agentname: payload.agentName,
-      //   agentemail: payload.agentEmail,
-      //   agentusername: payload.agentUsername,
-      //   agentpassword: payload.agentPassword,
-      //   })
-      //   .then(res => console.log('sucess', res))
-      //   .catch(err => console.log(err))
+     
       AddAgent({
         agentname: payload.name,
         agentemail: payload.email,
-        agentusername: payload.username,
+        //agentusername: payload.username,
         agentpassword: payload.password
       }).then(res => console.log('sucess', res)).catch(err => console.log(err))
     }
@@ -119,7 +110,6 @@ export default {
 .clearfix {
   clear: both;
 }
-
 .ant-form-item {
   margin-bottom: 5px;
 }

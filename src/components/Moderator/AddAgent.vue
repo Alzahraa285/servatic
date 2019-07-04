@@ -17,6 +17,7 @@
         <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)"/>
       </a-input>
     </a-form-item>
+    <a-divider>Login Info</a-divider>
     <a-form-item>
       <a-input
         v-decorator="[
@@ -28,8 +29,8 @@
         <a-icon slot="prefix" type="mail" style="color: rgba(0,0,0,.25)"/>
       </a-input>
     </a-form-item>
-    <a-divider>Login Info</a-divider>
-    <a-form-item>
+    
+    <!-- <a-form-item>
       <a-input
         v-decorator="[
                 'agentUsername',
@@ -39,7 +40,7 @@
       >
         <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)"/>
       </a-input>
-    </a-form-item>
+    </a-form-item> -->
     <a-form-item>
       <a-input
         v-decorator="[
@@ -65,7 +66,7 @@ export default {
       agentData: {
         name: '',
         email: '',
-        username: '',
+       // username: '',
         password: ''
       }
     }
@@ -77,7 +78,7 @@ export default {
         if (!err) {
           this.agentData.name = values.agentName
           this.agentData.email = values.agentEmail
-          this.agentData.username = values.agentUsername
+        //this.agentData.username = values.agentUsername
           this.agentData.password = values.agentPassword
           this.$emit('closeDrawer', true)
           this.$emit('agentData', this.agentData);
